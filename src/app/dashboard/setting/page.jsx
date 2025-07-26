@@ -4,6 +4,7 @@ import { icons } from "@/lib/Icons";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import "../../../styles/Settings.css";
+import { toast } from "react-hot-toast";
 
 export default function SettingsPage() {
   //  UI State
@@ -29,6 +30,7 @@ export default function SettingsPage() {
   const handleNameUpdate = async (e) => {
     e.preventDefault();
     setFirstNameLoading(true);
+
     try {
       const res = await fetch(
         `https://advertorial-backend.onrender.com/api/auth/user/${userIdOrEmail}`,
@@ -44,14 +46,17 @@ export default function SettingsPage() {
       const data = await res.json();
 
       if (res.ok) {
-        console.log("Last name updated successfully:", data);
+        console.log("First name updated successfully:", data);
+        toast.success("First name updated");
         setFirstName("");
-        setFirstNameLoading(false);
       } else {
-        console.error("Failed to update last name:", data.message || data);
+        console.error("Failed to update first name:", data.message || data);
+        toast.error(data.message || "Failed to update first name");
       }
     } catch (error) {
-      console.error("Error updating last name:", error);
+      console.error("Error updating first name:", error);
+      toast.error("An error occurred while updating your name");
+    } finally {
       setFirstNameLoading(false);
     }
   };
@@ -60,7 +65,9 @@ export default function SettingsPage() {
     e.preventDefault();
     setEmailLoading(true);
     setEmailError(false);
+
     const forgottenPasswordEmail = user?.email;
+
     try {
       const res = await fetch(
         `https://advertorial-backend.onrender.com/api/auth/forgot-password`,
@@ -69,27 +76,29 @@ export default function SettingsPage() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email: forgottenPasswordEmail }), // Only updating first name
+          body: JSON.stringify({ email: forgottenPasswordEmail }),
         }
       );
 
       const data = await res.json();
 
       if (res.ok) {
-        console.log("Password updated successfully:", data);
+        console.log("Password reset email sent:", data);
+        toast.success("Password reset email sent successfully");
         setChangePassoword(false);
         setSecureAccount(true);
-        setEmailLoading(false);
         setEmailError(false);
       } else {
-        console.error("Failed to update Password:", data.message || data);
-        setEmailLoading(false);
+        console.error("Failed to send reset email:", data.message || data);
+        toast.error(data.message || "Failed to send password reset email");
         setEmailError(true);
       }
     } catch (error) {
-      console.error("Error updating Password:", error);
-      setEmailLoading(false);
+      console.error("Error sending reset email:", error);
+      toast.error("An error occurred while sending reset email");
       setEmailError(true);
+    } finally {
+      setEmailLoading(false);
     }
   };
 
@@ -163,7 +172,9 @@ export default function SettingsPage() {
   }, [userIdOrEmail, handleNameUpdate]);
   return (
     <div>
-      <h1 className="heading-text ">Settings</h1>
+      <h1 className="heading-text " data-aos="fade-down">
+        Settings
+      </h1>
       {/* container  */}
       <main className=" setting-container">
         {/* my information  */}
@@ -197,8 +208,7 @@ export default function SettingsPage() {
             </section>
             <button
               className={state ? " button-active" : " button-inactive"}
-              onClick={handleNameUpdate}
-            >
+              onClick={handleNameUpdate}>
               {firstNameLoading ? "Saving..." : "Save Changes"}
             </button>
           </form>
@@ -224,8 +234,7 @@ export default function SettingsPage() {
                   <button
                     type="button"
                     className=" change-button"
-                    onClick={() => setChangePassoword(true)}
-                  >
+                    onClick={() => setChangePassoword(true)}>
                     Change
                   </button>
                 </article>
@@ -265,8 +274,7 @@ export default function SettingsPage() {
               </p>
               <button
                 className="button-blue"
-                onClick={() => router.push("/Pricing")}
-              >
+                onClick={() => router.push("/Pricing")}>
                 Upgrade to Pro
               </button>
             </div>
@@ -284,8 +292,7 @@ export default function SettingsPage() {
             <button
               type="button"
               onClick={() => setDeleteAccount(true)}
-              className="delete-accountB"
-            >
+              className="delete-accountB">
               Delete my account
             </button>
           </div>
@@ -300,8 +307,7 @@ export default function SettingsPage() {
               <button
                 type="button"
                 className=" cursor-pointer "
-                onClick={() => setChangePassoword(false)}
-              >
+                onClick={() => setChangePassoword(false)}>
                 {icons.exit}
               </button>
             </h4>
@@ -324,8 +330,7 @@ export default function SettingsPage() {
               <button
                 className="button-blue overlay-button "
                 id="savePasswordChange"
-                onClick={handleForgotPassword}
-              >
+                onClick={handleForgotPassword}>
                 {/* Save Change */}
                 {emailLoading ? "Sending..." : "Send Reset Password Email"}
               </button>
@@ -348,8 +353,7 @@ export default function SettingsPage() {
               <button
                 type="button"
                 className=" cursor-pointer "
-                onClick={() => setSecureAccount(false)}
-              >
+                onClick={() => setSecureAccount(false)}>
                 {icons.exit}
               </button>
             </h4>
@@ -372,45 +376,49 @@ export default function SettingsPage() {
                 className="button-blue overlay-button"
                 type="button"
                 id="secure"
-                onClick={() => setSecureAccount(false)}
-              >
+                onClick={() => setSecureAccount(false)}>
                 Close
               </button>
             </form>
           </div>
         </section>
       )}
+
+      {/* DELETE POST  */}
       {deleteAccount && (
-        <section className="settings-overlay">
-          <div className="overlay-container">
-            <section className=" flex flex-col gap-[16px]">
-              <h4 className=" overlay-header">
-                Delete Your Account
+        <section className="addLink-overlay">
+          <div
+            className="overlay-delete-container mild-zoom"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            data-aos-duration="500">
+            <section className=" current-delete-container">
+              <div className="current-delete-info">
+                <span>{icons.deletefill}</span>
+                <h2>
+                  Delete Your Account
+                  <span>
+                    This action is permanent. Please be certain you want to
+                    delete this account, all your data will be permanently
+                    deleted and visitors will no longer be able to see your
+                    profile
+                  </span>
+                </h2>
+              </div>
+              <span className="line-through"></span>
+              <div className="current-delete-btns">
                 <button
-                  type="button"
-                  className=" cursor-pointer "
-                  onClick={() => setDeleteAccount(false)}
-                >
-                  {icons.exit}
+                  className="current-cancel-btn"
+                  onClick={() => setDeleteAccount(false)}>
+                  Cancel
                 </button>
-              </h4>
-              <p
-                htmlFor="code"
-                className=" text-[#525866] text-[16px] font-[400] leading-[20px]"
-              >
-                This action is permanent. Please be certain you want to delete
-                this account, all your data will be permanently deleted and
-                visitors will no longer be able to see your profile
-              </p>
-            </section>
-            <section action="" className="  overlay-form1">
-              <button
-                className="overlay-delete-button"
-                type="button"
-                onClick={handleDeleteAccount}
-              >
-                Delete my account
-              </button>
+                <button
+                  className="current-delete-btn"
+                  type="button"
+                  onClick={handleDeleteAccount}>
+                  Delete my account
+                </button>
+              </div>
             </section>
           </div>
         </section>
