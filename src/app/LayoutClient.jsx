@@ -23,16 +23,22 @@ export default function LayoutClient({ children }) {
 
   const noFooterPages = [
     "/dashboard",
-    "/dashboard/analytics",
-    "/dashboard/setting",
+    "/dashboard/mypost",
+    "/dashboard/myads",
     "/dashboard/pricing",
+    "/dashboard/profile",
+    "/dashboard/setting",
+    "/dashboard/posts/:id",
   ];
 
   const noHeaderPages = [
     "/dashboard",
-    "/dashboard/analytics",
-    "/dashboard/setting",
+    "/dashboard/mypost",
+    "/dashboard/myads",
     "/dashboard/pricing",
+    "/dashboard/profile",
+    "/dashboard/setting",
+    "/dashboard/posts/:id",
   ];
 
   function isNoHeaderPage(path) {
@@ -45,7 +51,15 @@ export default function LayoutClient({ children }) {
 
   return (
     <>
-      <Toaster position="top-right" toastOptions={{ duration: 5000 }} />
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 5000,
+          style: {
+            zIndex: 9999, // Ensuring this is above modals, headers and more.
+          },
+        }}
+      />
       {!isNoHeaderPage(pathname) && <Header />}
       <main>{children}</main>
       {!isNoFooterPage(pathname) && <Footer />}
