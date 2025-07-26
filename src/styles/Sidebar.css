@@ -1,27 +1,40 @@
-/* Sidebar container */
+/* ============================= */
+/* === Sidebar Container ======= */
+/* ============================= */
+
 .sidebar-container {
   display: none;
 }
 
+/* Show sidebar on medium screens and up */
 @media (min-width: 768px) {
   .sidebar-container {
     display: block;
   }
- 
 }
 
-/* Sidebar styles */
+
+/* ============================= */
+/* === Sidebar Main Wrapper ==== */
+/* ============================= */
+
 .sidebar {
   width: 274px;
   position: fixed;
   z-index: 10;
+  top: 0%;
   left: 0;
-  height: 100vh;
+  bottom: 0;
+  /* height: 100vh; Optional full height */
   background-color: #14171f;
   padding: 0 20px;
 }
 
-/* Header section */
+
+/* ============================= */
+/* === Sidebar Header Section == */
+/* ============================= */
+
 .sidebar-header {
   display: flex;
   align-items: center;
@@ -46,7 +59,11 @@
   line-height: 28px;
 }
 
-/* Nav styles */
+
+/* ============================= */
+/* === Sidebar Navigation ====== */
+/* ============================= */
+
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -57,7 +74,11 @@
   width: 100%;
 }
 
-/* Sidebar links */
+
+/* ============================= */
+/* === Sidebar Link Styles ===== */
+/* ============================= */
+
 .sidebar-link {
   display: flex;
   align-items: center;
@@ -80,14 +101,200 @@
   color: #ffffff;
 }
 
-/* Active link style */
+
+/* ============================= */
+/* === Active/Inactive Links === */
+/* ============================= */
+
 .active-link {
   background-color: #0162d3;
   color: #ffffff;
 }
 
-/* Inactive link style */
 .inactive-link {
   background-color: transparent;
   color: #cdd0d5;
+}
+
+/* ============================= */
+/* === Logout Button === */
+/* ============================= */
+.logout-button{
+  position: absolute;
+  bottom: 100px;
+  left: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #CDD0D5;
+  cursor: pointer;
+}
+
+/* ========================== */
+/* OVERLAY SECTION */
+/* ========================== */
+
+.addLink-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #344054b2;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================== */
+/* DELETE CONFIRMATION OVERLAY */
+/* ========================== */
+
+.current-delete-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-delete-container {
+  background: #ffffff;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.current-delete-info {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+}
+
+.current-delete-info span {
+  padding-top: 3px;
+}
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0A0D14;
+  margin: 0%;
+  line-height: 24px;
+}
+.line-through{
+  background: #E2E4E9;
+  height: 1px;
+}
+.current-delete-info h2 span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525866;
+  text-align: start;
+}
+
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: end;
+  padding: 20px;
+}
+
+.current-cancel-btn {
+  background: transparent;
+  padding: 8px 16px;
+  border: 1px solid #E2E4E9;
+  font-size: 16px;
+  font-weight: 500;
+  color: #525866;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.current-delete-btn {
+  background: #DF1C41;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+/* ========================== */
+/* AOS ANIMATION TWEAK */
+/* ========================== */
+
+[data-aos="zoom-in"].mild-zoom {
+  transform: scale(0.96); /* starts at 96% size */
+}
+
+[data-aos="zoom-in"].mild-zoom.aos-animate {
+  transform: scale(1); /* animates to normal size */
+}
+
+
+/* ========================== */
+/* MEDIA QUERY  */
+/* ========================== */
+@media (max-width: 768px) {
+ .pc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size:14px;
+  font-weight:400;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+   
+}
+ .cp {
+  display: none;
+}
+.overlay-link-cancel,.overlay-link-button {
+  flex: 1;
+}
+
+.current-delete-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-delete-info h2 span {
+  text-align: center;
+}
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+.current-cancel-btn,.current-delete-btn {
+  flex: 1;
+  width: 100%;
+}
+
 }

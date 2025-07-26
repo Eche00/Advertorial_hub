@@ -1,0 +1,611 @@
+/* ========================================= */
+/* ========== GENERAL HEADINGS ============ */
+/* ========================================= */
+.heading-text {
+  color: #0a0d14;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100%;
+  padding: 36px 0;
+  letter-spacing: -0.5%;
+}
+
+/* ========================================= */
+/* ========== MAIN CONTAINER ============== */
+/* ========================================= */
+.myads-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ========================================= */
+/* ========== HEADER SECTION ============== */
+/* ========================================= */
+.myads-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Toggle buttons container */
+.ads-button-container {
+  background: #F6F8FA;
+  border: 1px solid #E2E4E9;
+  border-radius: 10px;
+  width: fit-content;
+  height: fit-content;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 18px;
+}
+
+/* Each toggle button */
+.adsbtn {
+  padding: 6px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #525866;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 2s ease-in-out;
+}
+
+/* Active toggle */
+.active {
+  background: #FFFFFF;
+  color: #0A0D14;
+  box-shadow:
+    0px 2px 4px rgba(27, 28, 29, 0.02),
+    0px 6px 10px rgba(27, 28, 29, 0.06);
+  border-radius: 6px;
+  transition: all 2s ease-in-out;
+}
+
+/* ========================================= */
+/* ========== SEARCH BAR ================== */
+/* ========================================= */
+.ads-search-container {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.ads-search-container div {
+  background: #FFFFFF;
+  border: 1px solid #E2E4E9;
+  max-width: 233px;
+  width: 100%;
+  padding: 12px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+}
+
+.ads-search-container div input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.ads-search-container button {
+  background: #016CE8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px;
+  width: 97px;
+  gap: 4px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ========================================= */
+/* ========== AD CARDS ==================== */
+/* ========================================= */
+.myads-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.myads-card {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #E2E4E9;
+  box-shadow: 0px 1px 2px rgba(228, 229, 231, 0.24);
+}
+
+/* Ad image section */
+.ads-image {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.ads-image img {
+  width: 376px;
+  height: 161px;
+  object-fit: cover;
+  background: #E2E4E9;
+}
+
+/* Approval status badges */
+.adsapproved {
+  color: #176448;
+  background: #CBF5E5;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 16px;
+  border-radius: 100px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.adspending {
+  color: #693D11;
+  background: #FBDFB1;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 16px;
+  border-radius: 100px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Info under image */
+.myads-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  max-width: 344px;
+  margin-bottom: 20px;
+}
+
+.myads-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #0A0D14;
+}
+
+.myads-info p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.25%;
+  color: #525866;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Extra details like stats, menu */
+.myads-extra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 14px 8px;
+}
+
+.myads-extra p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #525866;
+  margin: 0;
+}
+
+.myads-extra p span {
+  color: #0A0D14;
+  margin: 0;
+}
+
+.myads-extra span {
+  cursor: pointer;
+  position: relative;
+}
+
+hr {
+  border: 0.5px solid #E2E4E9;
+  margin: 0;
+}
+
+/* ========================================= */
+/* ========== DROPDOWN MENU =============== */
+/* ========================================= */
+.myads-menu {
+  width: 184px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid #eceff3;
+  background: #ffffff;
+  z-index: 10;
+  list-style: none;
+  padding: 0;
+}
+
+.myads-menu li {
+  padding: 12px;
+  cursor: pointer;
+  color: #525866;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.myads-menu .d {
+  color: #df1c41;
+  font-weight: 600;
+}
+
+/* ========================================= */
+/* ========== MODALS & OVERLAYS =========== */
+/* ========================================= */
+.addLink-overlay,
+.filterads-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 110vh;
+  background: #344054b2;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-container {
+  background: #ffffff;
+  width: 535px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+/* Filter Sidebar */
+.filterads-overlay-container {
+  position: absolute;
+  top: 0%;
+  right: 0;
+  background: #ffffff;
+  width: 450px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px 0;
+}
+
+.modal-header,
+.filter-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 24px;
+}
+
+.modal-header h2,
+.filter-modal-header h2 {
+  margin: 0;
+}
+
+.insight-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0A0D14;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pc {
+ 
+  display: none;
+}
+.close-button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* ================== */
+/* Filter form styles */
+/* ================== */
+.ads-filter {
+  width: auto;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-section label {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  gap: 12px;
+  padding: 0 12px;
+}
+
+.filter-section input {
+  cursor: pointer;
+}
+
+.filter-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #868C98;
+  margin-bottom: 8px;
+  background: #F6F8FA;
+  padding: 6px 16px;
+}
+
+input[type='radio'] {
+  accent-color: #3182ce;
+}
+
+.date-range {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+input[type='date'] {
+  padding: 6px 8px;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.dash {
+  font-weight: bold;
+  color: #E2E4E9;
+}
+
+/* ========================== */
+/* Filter Apply Button       */
+/* ========================== */
+.apply-btn-container {
+  width: auto;
+  padding: 0 16px;
+}
+
+.apply-button {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.apply-button:hover {
+  background-color: #0059d6;
+}
+
+/* ========================================= */
+/* ========== DELETE OVERLAY ============== */
+/* ========================================= */
+.current-delete-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-delete-container {
+  background: #ffffff;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.current-delete-info {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+}
+
+.current-delete-info span {
+  padding-top: 3px;
+}
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0A0D14;
+  margin: 0;
+  line-height: 24px;
+}
+
+.current-delete-info h2 span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525866;
+}
+
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: end;
+  padding: 20px;
+}
+
+.current-cancel-btn {
+  background: transparent;
+  padding: 8px 16px;
+  border: 1px solid #E2E4E9;
+  font-size: 16px;
+  font-weight: 500;
+  color: #525866;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.current-delete-btn {
+  background: #DF1C41;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+
+
+/* ========================== */
+/* DASHBOARD FOOTER */
+/* ========================== */
+
+.dashFooter {
+  background-color: #016ce8;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.dashFooter a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dashFooter a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ========================================= */
+/* ========== AOS ZOOM TWEAK ============== */
+/* ========================================= */
+[data-aos="zoom-in"].mild-zoom {
+  transform: scale(0.96);
+}
+
+[data-aos="zoom-in"].mild-zoom.aos-animate {
+  transform: scale(1);
+}
+
+/* ========================================= */
+/* ========== MEDIA QUERIES =============== */
+/* ========================================= */
+@media (max-width: 1260px) {
+  .myads-header {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .metrics-grid {
+    flex-direction: column;
+  }
+.filterads-overlay-container {
+  
+  width: 100%;
+  
+}
+  .adsapproved,.adspending  {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+}
+
+
+.current-delete-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-delete-info h2 span {
+  text-align: center;
+}
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+.current-cancel-btn,.current-delete-btn {
+  flex: 1;
+  width: 100%;
+}
+ .pc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size:14px;
+  font-weight:400;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+   
+}
+.close-button {
+  display: none;
+}
+}

@@ -1,4 +1,6 @@
+/* ======================== */
 /* ===== Billing Buttons ===== */
+/* ======================== */
 
 .billing-buttons {
   background-color: #f6f8fa;
@@ -9,13 +11,6 @@
   cursor: pointer;
 }
 
-.monthly-billing:hover,
-.annual-billing:hover {
-  color: #016ce8;
-  transition: background 0.2s, color 0.3s;
-  background-color: white;
-  /* border: 1px solid #016ce8; */
-}
 .annual-billing,
 .monthly-billing {
   background-color: #f6f8fa;
@@ -27,6 +22,15 @@
   line-height: 20px;
   border: none;
 }
+
+.monthly-billing:hover,
+.annual-billing:hover {
+  color: #016ce8;
+  transition: background 0.2s, color 0.3s;
+  background-color: white;
+  /* border: 1px solid #016ce8; */
+}
+
 .monthly-billing.active,
 .annual-billing.active {
   background-color: #016ce8;
@@ -34,6 +38,7 @@
   font-weight: 600;
   transition: all 0.2s ease-in-out;
 }
+
 /* Shared active class */
 .billing-buttons button.active {
   background-color: #016ce8;
@@ -51,12 +56,20 @@
   cursor: pointer;
 }
 
+
+/* ============================ */
 /* ===== Page Container ===== */
+/* ============================ */
+
 .Pricepage-container {
   margin: 2rem 3rem 15rem;
 }
 
+
+/* ============================ */
 /* ===== Main Content ===== */
+/* ============================ */
+
 .PriceMainContent {
   margin: 4rem 0;
   display: flex;
@@ -64,7 +77,11 @@
   gap: 64px;
 }
 
+
+/* ============================ */
 /* ===== Header Section ===== */
+/* ============================ */
+
 .PriceHeadSection {
   width: 100%;
   display: flex;
@@ -83,8 +100,10 @@
 }
 
 
-
+/* ============================ */
 /* ===== Pricing Section ===== */
+/* ============================ */
+
 .pricing-section {
   display: flex;
   flex-wrap: wrap;
@@ -92,7 +111,11 @@
   justify-content: space-between;
 }
 
+
+/* ============================ */
 /* ===== Pricing Card ===== */
+/* ============================ */
+
 .pricing-card {
   width: 70%;
   max-width: 200px;
@@ -107,7 +130,11 @@
   font-size: 1.3rem;
 }
 
+
+/* ============================ */
 /* ===== Plan Details ===== */
+/* ============================ */
+
 .Priceplan-details,
 .Priceplan-header {
   display: flex;
@@ -169,7 +196,11 @@
   color: #525866;
 }
 
+
+/* ============================ */
 /* ===== Buttons ===== */
+/* ============================ */
+
 .current-plan-btn,
 .get-started-btn {
   width: 100%;
@@ -192,15 +223,14 @@
   background-color: #ffffff;
 }
 
+
+/* ============================ */
 /* ===== Features ===== */
+/* ============================ */
+
 .Priceplan-features {
   display: flex;
   flex-direction: column;
-}
-
-.Pricefeature span,
-.Pricefeaturelight span {
-  padding-right: 1rem;
 }
 
 .Pricefeature,
@@ -210,6 +240,11 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+}
+
+.Pricefeature span,
+.Pricefeaturelight span {
+  padding-right: 1rem;
 }
 
 .Pricefeature {
@@ -225,7 +260,23 @@
   color: #ffffff;
 }
 
-/* ===== Media Queries ===== */
+
+/* ============================ */
+/* ===== AOS Zoom Tweak ===== */
+/* ============================ */
+
+[data-aos="zoom-in"].mild-zoom {
+  transform: scale(0.96);
+}
+
+[data-aos="zoom-in"].mild-zoom.aos-animate {
+  transform: scale(1);
+}
+
+
+/* ============================ */
+/* ===== Responsive Media Queries ===== */
+/* ============================ */
 
 /* Large Desktops */
 @media (min-width: 1440px) {
@@ -284,6 +335,7 @@
 
   .pricing-card {
     max-width: 100%;
+   
   }
 
   .Pricemain-heading {
@@ -329,6 +381,14 @@
   }
 }
 
+/* mid Phones */
+@media (max-width: 770px) {
+  .pricing-card {
+    max-width: 90%;
+  }
+
+ 
+}
 /* Small Phones */
 @media (max-width: 414px) {
   .Pricemain-heading {
@@ -350,8 +410,5 @@
     font-size: 16px;
   }
 
-  .pricing-card {
-    max-width: 250px;
-  }
-  
+ 
 }

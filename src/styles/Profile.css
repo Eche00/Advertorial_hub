@@ -1,0 +1,498 @@
+/* ========================== */
+/* ===== Heading Text ===== */
+/* ========================== */
+.heading-text {
+  color: #0a0d14;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100%;
+  padding: 36px 0;
+  letter-spacing: -0.5%;
+}
+
+
+/* ============================= */
+/* ===== Profile Container ===== */
+/* ============================= */
+.profile-container {
+  max-width: 749px;
+  width: 100%;
+  margin: 2rem auto;
+  background-color: #f9fbfc;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0A0D14;
+}
+
+
+/* ============================= */
+/* ===== Image Section ===== */
+/* ============================= */
+.image-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.avatar-box {
+  display: flex;
+  gap: 16px;
+}
+
+.avatar-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5f6f7 0%, #e9ebee 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0d14;
+  font-size: 21.33px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0%;
+}
+
+/* ========================== */
+/* CURSOR POINTER GENERAL */
+/* ========================== */
+.pc {
+  display: none;
+}
+.cp {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: inline-block;
+}
+
+/* ============================= */
+/* ===== Upload Controls ===== */
+/* ============================= */
+.upload-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.upload-controls div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.image-headt {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0A0D14;
+  margin: 0%;
+}
+
+.image-note {
+  font-size: 14px;
+  font-weight: 400;
+  color: #0A0D14;
+  margin: 0%;
+}
+
+.upload-btn {
+  padding: 4px 10px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  color: #525866;
+  border: 1px solid #E2E4E9;
+  margin: 0%;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.remove-btn {
+  padding: 4px 10px;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 500;
+  color: #DF1C41;
+  border: 1px solid #DF1C41;
+  margin: 0%;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+
+/* ============================= */
+/* ===== Counts ===== */
+/* ============================= */
+.counts {
+  display: flex;
+  gap: 2rem;
+}
+
+.count-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #0A0D14;
+}
+
+.count-value {
+  font-size: 16px;
+  font-weight: 400;
+  color: #525866;
+  margin: 0%;
+}
+
+
+/* ============================= */
+/* ===== Form Section ===== */
+/* ============================= */
+.form-section {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0A0D14;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-group input {
+  padding: 10px 12px;
+  border: 1px solid #E2E4E9;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.disabled-emailbox {
+  padding: 10px 12px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background: #F6F8FA;
+  color: #CDD0D5;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.location-link {
+  color: #016CE8;
+  text-decoration: none;
+}
+
+
+/* ============================= */
+/* ===== Action Buttons ===== */
+/* ============================= */
+.action-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.discard-btn {
+  padding: 10px 32px;
+  border-radius: 2rem;
+  background: #FFFFFF;
+  border: 1px solid #E2E4E9;
+  font-size: 14px;
+  font-weight: 600;
+  color: #525866;
+  cursor: pointer;
+}
+
+.update-btn {
+  padding: 10px 32px;
+  border-radius: 2rem;
+  background: #016CE8;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+
+/* ============================= */
+/* ===== Overlay Styles ===== */
+/* ============================= */
+.addLink-overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #344054b2;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-container {
+  background: #ffffff;
+  width: 535px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 12px;
+}
+.overlay-header {
+  color: #0a0d14;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* ============================= */
+/* ===== Image Select Card ===== */
+/* ============================= */
+.image-select-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 199px;
+  border: 1px dashed #e2e4e9;
+  border-radius: 4px;
+  gap: 16px;
+}
+
+.image-select-card label {
+  color: #016ce8;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+}
+
+.image-select-card h5 {
+  color: #525866;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+}
+
+
+/* ============================= */
+/* ===== Link Input Fields ===== */
+/* ============================= */
+.cp {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay-link-input {
+  outline: none;
+  border: 1px solid #e2e4e9;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.overlay-link-input input {
+  border: none;
+}
+
+.overlay-link-input p {
+  color: #525866;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  border-right: 1px solid #e2e4e9;
+  padding: 10px;
+}
+
+.overlay-link-input span {
+  padding: 10px;
+}
+
+
+/* ============================= */
+/* ===== Overlay Buttons ===== */
+/* ============================= */
+.link-buttons-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: end;
+}
+.overlay-link-cancel {
+  border: 1px solid #e2e4e9;
+  padding: 10px 32px;
+  color: #525866;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.overlay-link-button {
+  background: #016ce8;
+  border: none;
+  padding: 10px 32px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+
+/* ============================= */
+/* ===== Success Message ===== */
+/* ============================= */
+.success-message {
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+
+/* ========================== */
+/* DASHBOARD FOOTER */
+/* ========================== */
+
+.dashFooter {
+  background-color: #016ce8;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.dashFooter a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.dashFooter a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* ============================ */
+/* ===== AOS Zoom Tweak ===== */
+/* ============================ */
+
+[data-aos="zoom-in"].mild-zoom {
+  transform: scale(0.96);
+}
+
+[data-aos="zoom-in"].mild-zoom.aos-animate {
+  transform: scale(1);
+}
+
+
+/* ============================= */
+/* ===== Responsive Media ===== */
+/* ============================= */
+@media (max-width: 500px) {
+  .input-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
+@media (max-width: 770px) {
+  
+  .profile-container {
+  max-width: 90%;
+  width: 100%;
+}
+.overlay-container {
+  background: #ffffff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+ .pc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size:14px;
+  font-weight:400;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+   
+}
+ .cp {
+  display: none;
+}
+.link-buttons-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.overlay-link-cancel,.overlay-link-button {
+  flex: 1;
+}
+}

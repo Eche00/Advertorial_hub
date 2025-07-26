@@ -1,11 +1,13 @@
-/* page  */
-/* page  */
-/* page  */
+/* ========================== */
+/* PAGE LAYOUT & HEADER STYLES */
+/* ========================== */
+
 .page-container {
   height: fit-content;
   width: 95%;
   margin-left: auto;
 }
+
 .page-h-text {
   padding: 36px 0;
   color: #0a0d14;
@@ -14,17 +16,24 @@
   line-height: 28px;
   text-align: center;
 }
+
 .main-card {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .h4-text {
   color: #0a0d14;
   font-size: 24px;
   font-weight: 500;
   line-height: 28px;
 }
+
+/* ========================== */
+/* PROFILE UPDATING SECTION */
+/* ========================== */
+
 .profile-updating-section {
   display: flex;
   flex-direction: column;
@@ -32,59 +41,66 @@
   border: 1px solid #e2e4e9;
   padding: 28px 24px;
   border-radius: 12px;
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-
-    li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      cursor: pointer;
-    }
-    .dn {
-      text-decoration: line-through;
-    }
-  }
 }
-.listoff {
+
+.profile-updating-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.profile-updating-section ul li {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  columns: #0a0d14;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  button {
-    color: #525866;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    padding: 10px 24px;
-    border: 1px solid #e2e4e9;
-    border-radius: 100px;
-    cursor: pointer;
-  }
+  gap: 12px;
+  cursor: pointer;
 }
+
+.profile-updating-section ul .dn {
+  text-decoration: line-through;
+}
+
+/* ========================== */
+/* LIST DISPLAY STYLES */
+/* ========================== */
+
+.listoff,
 .liston {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 16px;
-  columns: #0a0d14;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
+  columns: #0a0d14;
 }
 
-/* recent post / create post 1  */
-/* recent post / create post 1  */
-/* recent post / create post 1  */
+.listoff {
+  justify-content: space-between;
+}
+
+.liston {
+  justify-content: flex-start;
+}
+
+.listoff button {
+  color: #525866;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 10px 24px;
+  border: 1px solid #e2e4e9;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+/* ========================== */
+/* CREATE POST SECTION 1 */
+/* ========================== */
+
 .create-post-card {
   height: 448px;
   display: flex;
@@ -94,37 +110,45 @@
   border: 1px solid #e2e4e9;
   padding: 28px 24px;
   border-radius: 12px;
-  p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    counter-reset: #0a0d14;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    span {
-      color: #525866;
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 18px;
-    }
-  }
-  button {
-    background: #016ce8;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 12px 53px;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-    border-radius: 100px;
-    cursor: pointer;
-  }
 }
+
+.create-post-card p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  counter-reset: #0a0d14;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.create-post-card p span {
+  color: #525866;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.create-post-card button {
+  background: #016ce8;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 53px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+/* ========================== */
+/* ERROR & AVATAR STYLES */
+/* ========================== */
+
 .error-message {
   color: #df1c41;
   font-size: 14px;
@@ -132,11 +156,16 @@
   line-height: 18px;
   text-align: center;
 }
-/* profile  */
-.avatar-dummy {
+
+.avatar-dummy,
+.avatar-dummy-img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-dummy {
   background: radial-gradient(circle, #f5f6f7 0%, #e9ebee 100%);
   display: flex;
   align-items: center;
@@ -145,8 +174,16 @@
   font-size: 40px;
   font-weight: bolder;
   text-transform: uppercase;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
+
+.avatar-dummy-img {
+  object-fit: cover;
+}
+
+/* ========================== */
+/* FOLDER SELECTION STYLES */
+/* ========================== */
+
 .folder-selection-container {
   display: flex;
   flex-direction: column;
@@ -154,14 +191,20 @@
   justify-content: center;
   gap: 20px;
 }
-/* overlays */
-/* overlays */
-/* overlays */
-/* overlays */
+
+/* ========================== */
+/* INPUT GENERAL STYLE */
+/* ========================== */
+
 input {
   outline: none;
   padding: 10px;
 }
+
+/* ========================== */
+/* OVERLAY SECTION */
+/* ========================== */
+
 .addLink-overlay {
   position: fixed;
   width: 100%;
@@ -174,6 +217,7 @@ input {
   align-items: center;
   justify-content: center;
 }
+
 .overlay-container {
   background: #ffffff;
   width: 535px;
@@ -183,25 +227,43 @@ input {
   padding: 24px;
   border-radius: 12px;
 }
-.overlay-header {
-  color: #0a0d14;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 28px;
+
+.overlay-header,
+.overlay-headerAds {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #0a0d14;
+  line-height: 20px;
 }
+
+.overlay-header {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.overlay-headerAds {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0%;
+}
+
+/* ========================== */
+/* OVERLAY FORM STYLES */
+/* ========================== */
+
 .overlay-form1 {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
+
 .overlay-form2 {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .overlay-form3 {
   display: flex;
   flex-direction: column;
@@ -214,57 +276,68 @@ input {
   justify-content: space-between;
   border-bottom: 1px solid #e2e4e9;
   padding-bottom: 16px;
-
-  p {
-    color: #0a0d14;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    button {
-      cursor: pointer;
-    }
-  }
 }
+
+.selected-url p {
+  color: #0a0d14;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.selected-url p button {
+  cursor: pointer;
+}
+
 .overlay-link-label {
   color: #525866;
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
 }
+
 .overlay-input {
   outline: none;
   border: 1px solid #e2e4e9;
   padding: 10px;
   border-radius: 8px;
 }
+
 .hidden {
   display: none;
 }
+
 .overlay-link-input {
   outline: none;
   border: 1px solid #e2e4e9;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  input {
-    border: none;
-  }
-  p {
-    color: #525866;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-    border-right: 1px solid #e2e4e9;
-    padding: 10px;
-  }
-  span {
-    padding: 10px;
-  }
 }
+
+.overlay-link-input input {
+  border: none;
+}
+
+.overlay-link-input p {
+  color: #525866;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  border-right: 1px solid #e2e4e9;
+  padding: 10px;
+}
+
+.overlay-link-input span {
+  padding: 10px;
+}
+
+/* ========================== */
+/* LINK BUTTONS & ACTIONS */
+/* ========================== */
 
 .add-another {
   width: fit-content;
@@ -280,6 +353,7 @@ input {
   color: #016ce8;
   cursor: pointer;
 }
+
 .link-buttons-container {
   display: flex;
   align-items: center;
@@ -287,6 +361,7 @@ input {
   gap: 16px;
   margin-bottom: 30px;
 }
+
 .overlay-link-cancel {
   border: 1px solid #e2e4e9;
   padding: 10px 32px;
@@ -297,6 +372,7 @@ input {
   border-radius: 100px;
   cursor: pointer;
 }
+
 .overlay-link-button {
   background: #016ce8;
   border: none;
@@ -308,6 +384,7 @@ input {
   border-radius: 100px;
   cursor: pointer;
 }
+
 .overlay-deletelink-button {
   background: #df1c41;
   width: fit-content;
@@ -320,11 +397,16 @@ input {
   cursor: pointer;
 }
 
+/* ========================== */
+/* PROFILE CONTAINER & BUTTONS */
+/* ========================== */
+
 .profile-container {
   display: flex;
   align-items: center;
   gap: 16px;
 }
+
 .overlay-profile-button {
   border: 1px solid #e2e4e9;
   padding: 10px;
@@ -336,43 +418,69 @@ input {
   cursor: pointer;
 }
 
+/* ========================== */
+/* IMAGE SELECT & PREVIEW */
+/* ========================== */
+
 .image-select-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  /* max-height: 199px; */
   height: 199px;
   border: 1px dashed #e2e4e9;
   border-radius: 4px;
   gap: 16px;
-  label {
-    color: #016ce8;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-    text-decoration: underline;
-    cursor: pointer;
-    text-align: center;
-  }
-  h5 {
-    color: #525866;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    text-align: center;
-  }
+}
+
+.image-select-card label {
+  color: #016ce8;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+}
+
+.image-select-card h5 {
+  color: #525866;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+}
+
+.imagepreviewcontainer {
+  display: flex;
+  gap: 20px;
+}
+
+.imagepreview {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* ========================== */
+/* CURSOR POINTER GENERAL */
+/* ========================== */
+.pc {
+ 
+  display: none;
 }
 .cp {
   cursor: pointer;
   background: transparent;
   border: none;
+  display: inline-block;
 }
 
-/* create post section  */
-/* create post section  */
-/* create post section  */
+/* ========================== */
+/* CREATE POST MAIN SECTION */
+/* ========================== */
+
 .createpost-container {
   display: flex;
   flex-direction: column;
@@ -380,6 +488,7 @@ input {
   justify-content: center;
   gap: 20px;
 }
+
 .createpost-card {
   width: 793px;
   height: 796px;
@@ -390,34 +499,37 @@ input {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .createpost-subcard {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  textarea {
-    border: 1px solid #e2e4e9;
-    border-radius: 8px;
-    padding: 32px 24px;
-    outline: none;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-  }
-  button {
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    border: 1px solid #e2e4e9;
-    padding: 8px;
-    color: #525866;
-    border-radius: 100px;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    cursor: pointer;
-  }
+}
+
+.createpost-subcard textarea {
+  border: 1px solid #e2e4e9;
+  border-radius: 8px;
+  padding: 32px 24px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.createpost-subcard button {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #e2e4e9;
+  padding: 8px;
+  color: #525866;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  cursor: pointer;
 }
 
 .createpost-buttons-container {
@@ -426,29 +538,32 @@ input {
   justify-content: space-between;
 }
 
-/* posts  */
-/* posts  */
-/* posts  */
+/* ========================== */
+/* POSTS + RECENT POSTS */
+/* ========================== */
+
 .recentpost-header {
   position: relative;
-  button {
-    position: absolute;
-    right: 10px;
-    top: 20;
-    background: #016ce8;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 12px 53px;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 20px;
-    border-radius: 100px;
-    cursor: pointer;
-  }
 }
+
+.recentpost-header button {
+  position: absolute;
+  right: 10px;
+  top: 20;
+  background: #016ce8;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 53px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
 .recetpost-card {
   display: flex;
   flex-direction: column;
@@ -457,24 +572,61 @@ input {
   width: 51%;
   border-radius: 16px;
   padding: 32px 24px;
-
-  p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    color: #0a0d14;
-    letter-spacing: -0.5%;
-  }
-  span {
-    color: #016ce8;
-    text-decoration: underline;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 18px;
-    letter-spacing: -0.5%;
-    cursor: pointer;
-  }
 }
+
+.recetpost-card p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #0a0d14;
+  letter-spacing: -0.5%;
+}
+
+.recetpost-card section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.recetpost-card section div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.recetpost-card section p {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.recetpost-card section button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  padding: 8px 16px;
+  border: 1px solid #E2E4E9;
+  font-size: 16px;
+  font-weight: 500;
+  color: #525866;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.recetpost-card span {
+  color: #016ce8;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.5%;
+  cursor: pointer;
+}
+
 .posth-text {
   color: #0a0d14;
   font-size: 24px;
@@ -483,106 +635,357 @@ input {
   line-height: 100%;
   letter-spacing: -0.5%;
 }
+
+/* ========================== */
+/* POST CREATOR INFO SECTION */
+/* ========================== */
+
 .recentpost-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  article {
-    display: flex;
-    gap: 16px;
-    p {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      font-size: 18px;
-      font-weight: 500;
-      line-height: 24px;
-      color: #0a0d14;
-      span {
-        color: #525866;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-        text-decoration: none;
-      }
-    }
-  }
-  .recentpost-menu {
-    position: relative;
-    ul {
-      width: 184px;
-      position: absolute;
-      bottom: 1/2;
-      right: 0;
-      display: flex;
-      flex-direction: column;
-      border-radius: 8px;
-      border: 1px solid #eceff3;
-      box-shadow: rgba(16, 24, 40, 0.08);
-      background: #ffffff;
-      li {
-        padding: 12px;
-        cursor: pointer;
-        color: #525866;
-        font-size: 14px;
-        font-weight: 500;
-        line-height: 18px;
-      }
-      .d {
-        color: #df1c41;
-        font-weight: 600;
-      }
-    }
-  }
 }
-/* ------------------------------------------------------------------------------------- */
-.post-image {
+
+.recentpost-info article {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px; /* smaller gap for tighter layout */
-  justify-content: center;
+  gap: 16px;
+}
+
+.recentpost-info article p {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #0a0d14;
+  margin: 0%;
+}
+
+.recentpost-info article p span {
+  color: #525866;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+/* ========================== */
+/* RECENT POST MENU DROPDOWN */
+/* ========================== */
+
+.recentpost-info .recentpost-menu {
+  position: relative;
+}
+
+.recentpost-info .recentpost-menu ul {
+  width: 184px;
+  position: absolute;
+  bottom: 1/2;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid #eceff3;
+  box-shadow: rgba(16, 24, 40, 0.08);
+  background: #ffffff;
+  list-style: none;
+  padding: 0%;
+}
+
+.recentpost-info .recentpost-menu ul li {
+  padding: 12px;
+  cursor: pointer;
+  color: #525866;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.recentpost-info .recentpost-menu ul .d {
+  color: #df1c41;
+  font-weight: 600;
+}
+/* ========================== */
+/* POST IMAGE GALLERY STYLES */
+/* ========================== */
+.post-image {
+  display: grid;
+  gap: 6px;
   cursor: pointer;
 }
 
-.post-image img {
+/* One image - full width */
+.post-image.one {
+  grid-template-columns: 1fr;
+}
+
+.post-image.one img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Two images - side by side */
+.post-image.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.post-image.two img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Three images - large left, two stacked right */
+.post-image.three {
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-flow: column;
+}
+
+.post-image.three img:nth-child(1) {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+}
+
+.post-image.three img:nth-child(2),
+.post-image.three img:nth-child(3) {
+  width: 100%;
+  height: 100%;
+}
+
+/* Four images - 2x2 grid */
+.post-image.four {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.post-image.four img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Five images - 2 on top, 3 on bottom */
+.post-image.five {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.post-image.five img {
   object-fit: cover;
   border-radius: 8px;
   background: #000;
 }
 
-/* Dynamically adjust size based on image count */
-.post-image.one img {
-  width: 100%;
-  height: 320px;
-}
-
-.post-image.two img {
-  width: 48%;
-  height: 320px;
-}
-
-.post-image.three img {
-  width: 31%;
-  height: 320px;
-}
-
-.post-image.four img {
-  width: 48%;
+/* First two images - take 49% each to form the first row */
+.post-image.five img:nth-child(1),
+.post-image.five img:nth-child(2) {
+  width: calc(50% - 4px); /* 4px = half of the 8px gap */
   height: 180px;
 }
 
-.post-image.five img {
-  width: 31%;
+/* Next three images - take 32% each to fit three in one row */
+.post-image.five img:nth-child(3),
+.post-image.five img:nth-child(4),
+.post-image.five img:nth-child(5) {
+  width: calc(33.33% - 5.33px); /* approximate, to allow space for 3 images + gaps */
   height: 160px;
 }
 
-/* ------------------------------------------------------------------------------------- */
+/* ========================== */
+/* ADS INFO CONTAINER & DROPDOWNS */
+/* ========================== */
+
+.ads-info-container {
+  display: flex;
+  flex-direction: column;
+  background: #F6F8FA;
+  gap: 4px;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 10px 0%;
+}
+
+.ads-info-container h5 {
+  color: #0A0D14;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0%;
+}
+
+.ads-info-container p {
+  color: #525866;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0%;
+}
+
+.ads-info-container ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 16px;
+  padding: 0%;
+  list-style-type: none;
+}
+
+.ads-info-container ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0A0D14;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.ads-dropdown-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ads-dropdown-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #0A0D14;
+  font-weight: 500;
+}
+
+.ads-dropdown-container div select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E4E9;
+  outline: none;
+  cursor: pointer;
+  color: #868C98;
+}
+
+.ads-dropdown-container section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ads-dropdown-container section div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  color: #0A0D14;
+  font-weight: 500;
+}
+
+.ads-dropdown-container section div select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #E2E4E9;
+  outline: none;
+  cursor: pointer;
+  color: #868C98;
+}
+
+/* ========================== */
+/* DELETE CONFIRMATION OVERLAY */
+/* ========================== */
+
+.current-delete-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-delete-container {
+  background: #ffffff;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.current-delete-info {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+}
+
+.current-delete-info span {
+  padding-top: 3px;
+}
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0A0D14;
+  margin: 0%;
+  line-height: 24px;
+}
+.line-through{
+  background: #E2E4E9;
+  height: 1px;
+}
+.current-delete-info h2 span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525866;
+  text-align: start;
+}
+
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+  justify-content: end;
+  padding: 20px;
+}
+
+.current-cancel-btn {
+  background: transparent;
+  padding: 8px 16px;
+  border: 1px solid #E2E4E9;
+  font-size: 16px;
+  font-weight: 500;
+  color: #525866;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.current-delete-btn {
+  background: #DF1C41;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+/* ========================== */
+/* DASHBOARD FOOTER */
+/* ========================== */
 
 .dashFooter {
   background-color: #016ce8;
   color: #fff;
   padding: 20px;
-
   text-align: center;
   font-size: 14px;
 }
@@ -595,41 +998,106 @@ input {
 .dashFooter a:hover {
   text-decoration: underline;
 }
+
+/* ========================== */
+/* RESPONSIVE BREAKPOINTS */
+/* ========================== */
+
 @media (max-width: 468px) {
   .page-container {
     width: 100%;
   }
- 
 }
+
 @media (max-width: 768px) {
   .verlay-container,
   .recetpost-card {
     width: 100%;
   }
+
   .main-card {
     margin-right: 1rem;
     margin-left: 1rem;
   }
+
   .recentpost-header {
     position: relative;
-    button {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      background: #016ce8;
-      border: none;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 6px;
-      color: #ffffff;
-      font-size: 9px;
-    }
-    .page-h-text {
-      padding: 36px 0;
-      font-size: 2.2rem;
-    }
   }
+
+  .recentpost-header button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    background: #016ce8;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px;
+    color: #ffffff;
+    font-size: 9px;
+  }
+
+  .page-h-text {
+    padding: 36px 0;
+    font-size: 2.2rem;
+  }
+.overlay-container {
+  background: #ffffff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+ .pc {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size:14px;
+  font-weight:400;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+   
+}
+ .cp {
+  display: none;
+}
+.overlay-link-cancel,.overlay-link-button {
+  flex: 1;
+}
+
+.current-delete-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-delete-info h2 span {
+  text-align: center;
+}
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+.current-cancel-btn,.current-delete-btn {
+  flex: 1;
+  width: 100%;
+}
+
 }
 
 @media (max-width: 1200px) {
@@ -637,6 +1105,7 @@ input {
   .recetpost-card {
     width: 80%;
   }
+
   .createpost-card {
     width: 80%;
     border-radius: 16px;
@@ -644,13 +1113,15 @@ input {
   }
 }
 
-/* added for image preview  */
-.imagepreviewcontainer {
-  display: flex;
-  gap: 20px;
+/* ========================== */
+/* AOS ANIMATION TWEAK */
+/* ========================== */
+
+[data-aos="zoom-in"].mild-zoom {
+  transform: scale(0.96); /* starts at 96% size */
 }
-.imagepreview {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+
+[data-aos="zoom-in"].mild-zoom.aos-animate {
+  transform: scale(1); /* animates to normal size */
 }
+

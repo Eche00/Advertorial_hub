@@ -1,3 +1,6 @@
+/* ============================ */
+/* ===== Typography & Text ==== */
+/* ============================ */
 .heading-text {
   color: #0a0d14;
   font-size: 24px;
@@ -8,7 +11,9 @@
   letter-spacing: -0.5%;
 }
 
-/* main section  */
+/* ============================ */
+/* ===== Main Settings UI ===== */
+/* ============================ */
 .setting-container {
   width: 60%;
   margin: 0 auto;
@@ -16,12 +21,14 @@
   flex-direction: column;
   gap: 32px;
 }
+
 .my-information {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .information-header {
   color: #0a0d14;
   font-size: 24px;
@@ -29,11 +36,17 @@
   line-height: 28px;
   letter-spacing: -0.5%;
 }
+
+
+/* ============================ */
+/* ===== Settings Form ======= */
+/* ============================ */
 .settings-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .settings-subform {
   width: 100%;
   background: #ffffff;
@@ -42,6 +55,7 @@
   gap: 20px;
   border-radius: 12px;
 }
+
 .input-setting-name {
   outline: none;
   border: none;
@@ -56,6 +70,7 @@
 .input-setting-name::placeholder {
   color: #525866;
 }
+
 .input-setting-email {
   background: none;
   margin: 0px 20px;
@@ -64,11 +79,13 @@
   font-weight: 400;
   line-height: 20px;
 }
+
 .subform {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+
 .label {
   padding: 0 16px;
   color: #525866;
@@ -76,10 +93,12 @@
   font-weight: 400;
   line-height: 20px;
 }
+
 .input-email {
   outline: none;
   padding: 0 16px;
 }
+
 .email-msg {
   outline: none;
   border-top: 1px solid #e2e4e9;
@@ -88,6 +107,11 @@
   font-weight: 400;
   color: #525866;
 }
+
+
+/* ============================ */
+/* ===== Buttons & Actions ==== */
+/* ============================ */
 .button-inactive {
   background: #ffffff;
   border: none;
@@ -99,53 +123,7 @@
   line-height: 20px;
   border-radius: 100px;
 }
-article {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-}
-.change-button {
-  color: #016ce8;
-  background: none;
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  cursor: pointer;
-}
-.input-security-password {
-  outline: none;
-  border: none;
-}
-.input-password::placeholder {
-  color: #0a0d14;
-}
-.security-detail {
-  border-top: 1px solid #e2e4e9;
-  padding: 20px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  span {
-    cursor: pointer;
-  }
-}
-.security-textc {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  color: #525866;
-  span {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    color: #0a0d14;
-  }
-}
+
 .button-active {
   background: #016ce8;
   border: none;
@@ -158,12 +136,70 @@ article {
   border-radius: 100px;
   cursor: pointer;
 }
+
+.change-button {
+  color: #016ce8;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+
+/* ============================ */
+/* ===== Security Section ===== */
+/* ============================ */
+.input-security-password {
+  outline: none;
+  border: none;
+}
+
+.input-password::placeholder {
+  color: #0a0d14;
+}
+
+.security-detail {
+  border-top: 1px solid #e2e4e9;
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.security-detail span {
+  cursor: pointer;
+}
+
+.security-textc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #525866;
+}
+
+.security-textc span {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #0a0d14;
+}
+
+
+/* ============================ */
+/* ===== Management Block ===== */
+/* ============================ */
 .management-container {
   background: #ffffff;
   display: flex;
   flex-direction: column;
   border-radius: 12px;
 }
+
 .management-textc {
   display: flex;
   flex-direction: column;
@@ -174,19 +210,22 @@ article {
   line-height: 20px;
   border-bottom: solid 1px #e2e4e9;
   color: #525866;
-  span {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 24px;
-    color: #0a0d14;
-  }
 }
+
+.management-textc span {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #0a0d14;
+}
+
 .management-detail {
   padding: 22px;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
 .management-t {
   font-size: 16px;
   font-weight: 400;
@@ -194,6 +233,11 @@ article {
   text-align: center;
   color: #0a0d14;
 }
+
+
+/* ============================ */
+/* ===== Buttons: Blue & Red == */
+/* ============================ */
 .button-blue {
   background: #016ce8;
   border: none;
@@ -206,6 +250,7 @@ article {
   border-radius: 100px;
   cursor: pointer;
 }
+
 .delete-accountB {
   background: white;
   border: 1px solid #df1c41;
@@ -219,7 +264,10 @@ article {
   cursor: pointer;
 }
 
-/* overlay sections  */
+
+/* ============================ */
+/* ===== Overlay Section ===== */
+/* ============================ */
 .settings-overlay {
   position: fixed;
   width: 100%;
@@ -232,6 +280,7 @@ article {
   align-items: center;
   justify-content: center;
 }
+
 .overlay-container {
   background: #ffffff;
   width: 535px;
@@ -241,6 +290,7 @@ article {
   padding: 24px;
   border-radius: 12px;
 }
+
 .overlay-header {
   color: #0a0d14;
   font-size: 24px;
@@ -249,44 +299,53 @@ article {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  button{
-    cursor: pointer;
-    border: none;
-    background: transparent;
-  }
 }
-.overlay-form1 {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+
+.overlay-header button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
 }
-.overlay-form2 {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+
+.overlay-form1,
+.overlay-form2,
 .overlay-form3 {
   display: flex;
   flex-direction: column;
+}
+
+.overlay-form1 {
+  gap: 32px;
+}
+
+.overlay-form2 {
+  gap: 24px;
+}
+
+.overlay-form3 {
   gap: 8px;
 }
+
 .overlay-label {
   color: #0a0d14;
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
 }
+
 .overlay-input {
   outline: none;
   border: 1px solid #e2e4e9;
   padding: 10px;
   border-radius: 8px;
 }
+
 .overlay-button {
   margin-bottom: 30px;
   cursor: pointer;
 }
-.overlay-reset-email-failure{
+
+.overlay-reset-email-failure {
   color: #df1c41;
   font-size: 14px;
   font-weight: bolder;
@@ -294,6 +353,10 @@ article {
   text-align: center;
 }
 
+
+/* ============================ */
+/* ===== Preferences & OTP ==== */
+/* ============================ */
 .preference-active {
   flex: 1;
   background: #20232d;
@@ -305,6 +368,7 @@ article {
   border-radius: 8px;
   cursor: pointer;
 }
+
 .preference-inactive {
   flex: 1;
   color: #0a0d14;
@@ -321,38 +385,129 @@ article {
   display: flex;
   gap: 16px;
 }
+
 .new-passc {
   display: flex;
   flex-direction: column;
   gap: 16px;
   margin-bottom: 30px;
 }
+
 .sms-call {
   color: #0a0d14;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   text-align: center;
-  b {
-    color: #016ce8;
-  }
 }
-.overlay-delete-button {
-  background: #df1c41;
+
+.sms-call b {
+  color: #016ce8;
+}
+
+
+/* ============================= */
+/* ===== Overlay Styles ===== */
+/* ============================= */
+.addLink-overlay {
+  position: fixed;
   width: 100%;
-  padding: 12px 0;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 20px;
-  border-radius: 100px;
-  cursor: pointer;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #344054b2;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+/* ========================================= */
+/* ========== DELETE OVERLAY ============== */
+/* ========================================= */
+.current-delete-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-delete-container {
+  background: #ffffff;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+.current-delete-info {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 16px;
+  padding: 20px;
+}
+
+.current-delete-info span {
+  padding-top: 3px;
+}
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #0A0D14;
+  margin: 0;
+  line-height: 24px;
+}
+.line-through{
+  background: #E2E4E9;
+  height: 1px;
+}
+.current-delete-info h2 span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525866;
+}
+
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: end;
+  padding: 20px;
+}
+
+.current-cancel-btn {
+  background: transparent;
+  padding: 8px 16px;
+  border: 1px solid #E2E4E9;
+  font-size: 16px;
+  font-weight: 500;
+  color: #525866;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.current-delete-btn {
+  background: #DF1C41;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+
+
+/* ============================ */
+/* ===== Footer Section ====== */
+/* ============================ */
 .dashFooter {
   background-color: #016ce8;
   color: #fff;
   padding: 20px;
-
   text-align: center;
   font-size: 14px;
 }
@@ -365,10 +520,43 @@ article {
 .dashFooter a:hover {
   text-decoration: underline;
 }
+
+
+/* ============================ */
+/* ===== Responsive Media ==== */
+/* ============================ */
 @media (max-width: 768px) {
   .setting-container {
     width: 100%;
   }
+  .current-delete-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+.current-delete-info h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.current-delete-info h2 span {
+  text-align: center;
+}
+.current-delete-btns {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+ 
+}
+.current-cancel-btn,.current-delete-btn {
+  flex: 1;
+  width: 100%;
+}
+
+
 }
 
 @media (max-width: 1200px) {

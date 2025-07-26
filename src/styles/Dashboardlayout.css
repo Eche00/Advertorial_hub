@@ -1,21 +1,73 @@
-/* Layout container */
+/* ======================================= /
+/ ========== LAYOUT CONTAINER ========== /
+/ ======================================= */
+/* Layout wrapper for sidebar and main content */
 .layout-container {
   display: flex;
 }
 
-/* Main content styles */
+
+/* ======================================= /
+/ ========== MAIN CONTENT AREA ========= /
+/ ======================================= */
+
+
+/* Main content default styles */
 .main-content {
   margin-left: 0;
   width: 100%;
   background-color: #f7fafc;
 }
+
+/* Main content header section (mobile view) */
+.main-content > .main-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+
+/* ======================================= /
+/ ========== MOBILE HEADER ============= /
+/ ======================================= */
+
+/* Sidebar header for mobile layout */
+.mobile-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+}
+
+/* Logo icon in mobile sidebar */
+.mobile-sidebar-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Title in mobile sidebar */
+.mobile-sidebar-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #016CE8;
+  margin: 0%;
+}
+
+/* Side header absolute positioning */
 .sideHeader {
   position: absolute;
   top: 2%;
   left: 90%;
 }
 
-/* Apply margin-left to main content when the sidebar is visible (screen width >= 768px) */
+/* ======================================= /
+/ ========== RESPONSIVE STYLES ========= /
+/ ======================================= */
+
+/* Desktop view (sidebar visible) */
 @media (min-width: 768px) {
   .main-content {
     margin-left: 274px;
@@ -24,7 +76,14 @@
     padding-top: 10px;
     padding-right: 1;
   }
+
+  /* Hide mobile header section in desktop view */
+  .main-content > .main-section-container {
+    display: none;
+  }
 }
+
+/* Small screen view (mobile, tablets) */
 @media (max-width: 468px) {
   .main-content {
     margin-left: 0;
