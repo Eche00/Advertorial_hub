@@ -70,6 +70,26 @@ header {
   /* color: #333; */
   font-weight: 500;
 }
+
+.h-user-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.h-user-name{color: black;
+  font-size: 10px;
+  font-weight: bold;
+
+}
+.h-user-profile{
+  width: 30px;
+  height: 30px;
+  border-radius: 2rem;
+  object-fit: cover;
+  cursor: pointer;
+}
+
 .navbtn {
   text-decoration: none;
   color: #016ce8;
@@ -78,6 +98,8 @@ header {
   padding: 0.5rem 1.8rem;
   border-radius: 2rem;
   border: 2px #016ce8 solid;
+  cursor: pointer;
+
 }
 .navbtn:hover {
   color: white;
@@ -89,6 +111,7 @@ header {
 
 .header-buttons {
   display: none;
+  cursor: pointer;
 }
 .header-nav.show {
   display: flex;
@@ -124,6 +147,8 @@ header {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  cursor: pointer;
+
 }
 .hamburger.open .bar:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -162,6 +187,8 @@ header {
   }
   .login-btn {
     padding: 0.8rem 4rem;
+  cursor: pointer;
+
   }
   .btnStart {
     background-color: #016ce8;
