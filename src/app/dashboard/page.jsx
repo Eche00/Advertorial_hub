@@ -70,10 +70,6 @@ export default function HomePage() {
         }
       );
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch user data");
-      }
-
       const userData = await response.json();
       setUser(userData);
       return userData;
