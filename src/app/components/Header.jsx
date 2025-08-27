@@ -64,15 +64,6 @@ const Header = () => {
     getUser();
   }, []);
 
-  // Handle Pricing button click
-  const handlePricingClick = () => {
-    if (!localStorage.getItem("userId")) {
-      router.push("/authentication/Login"); // Redirect if not logged in
-    } else {
-      navigateTo("/Pricing"); // Go to pricing if logged in
-    }
-  };
-
   return (
     <header className="header">
       {/* Logo */}
@@ -92,8 +83,7 @@ const Header = () => {
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") setMenuOpen(!menuOpen);
-        }}
-      >
+        }}>
         <div className="bar"></div>
         <div className="bar"></div>
         <div className="bar"></div>
@@ -103,32 +93,30 @@ const Header = () => {
       <nav
         className={`header-nav ${menuOpen ? "show" : ""}`}
         ref={navRef}
-        aria-hidden={!menuOpen}
-      >
+        aria-hidden={!menuOpen}>
         <button
           className="my-link navbtn"
-          onClick={() => navigateTo("/AboutUs")}
-        >
+          onClick={() => navigateTo("/AboutUs")}>
           About Us
         </button>
         <button className="my-link navbtn" onClick={() => navigateTo("/Blog")}>
           Blog
         </button>
-        <button className="my-link navbtn" onClick={handlePricingClick}>
+        <button
+          className="my-link navbtn"
+          onClick={() => navigateTo("/Pricing")}>
           Pricing
         </button>
 
         <div className="mobile-buttons">
           <button
             className="login-btn"
-            onClick={() => navigateTo("/authentication/Login")}
-          >
+            onClick={() => navigateTo("/authentication/Login")}>
             Log In
           </button>
           <button
             className="btnStart"
-            onClick={() => navigateTo("/authentication/CreateAccount")}
-          >
+            onClick={() => navigateTo("/authentication/CreateAccount")}>
             Start Now
           </button>
         </div>
@@ -148,8 +136,7 @@ const Header = () => {
           ) : (
             <p
               className="h-user-profile"
-              onClick={() => navigateTo("/dashboard")}
-            >
+              onClick={() => navigateTo("/dashboard")}>
               {user?.firstName?.[0] + user?.lastName?.[0]}
             </p>
           )}
@@ -158,14 +145,12 @@ const Header = () => {
         <div className="header-buttons">
           <button
             className="login-btn"
-            onClick={() => navigateTo("/authentication/Login")}
-          >
+            onClick={() => navigateTo("/authentication/Login")}>
             Log In
           </button>
           <button
             className="btnStart"
-            onClick={() => navigateTo("/authentication/CreateAccount")}
-          >
+            onClick={() => navigateTo("/authentication/CreateAccount")}>
             Start Now
           </button>
         </div>
