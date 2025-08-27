@@ -519,7 +519,7 @@ export default function HomePage() {
             data-aos="zoom-in"
             data-aos-delay="400"
             data-aos-duration="2000">
-            {/* setup */}
+            {/* setup 
             <section className=" main-card ">
               <h4 className=" h4-text  ">Your quick start guide</h4>
               <div className="profile-updating-section ">
@@ -549,9 +549,10 @@ export default function HomePage() {
                   </ul>
                 )}
               </div>
-            </section>
+            </section> 
+            */}
             {/* Recent Post / create post */}
-            <section className=" main-card ">
+            <section className=" main-card-create ">
               <h4 className=" h4-text  ">Recent Post</h4>
               <div className="create-post-card ">
                 <section className="folder-selection-container">
@@ -567,7 +568,7 @@ export default function HomePage() {
             </section>
           </main>
           {/* addlink section  */}
-          {addLink && (
+          {/* {addLink && (
             <section className="addLink-overlay">
               <div
                 className="overlay-container"
@@ -585,7 +586,6 @@ export default function HomePage() {
                 </h4>
                 <form action="" className="  overlay-form1">
                   <section className="  overlay-form2">
-                    {/* selected url  */}
                     <div className="selected-url">
                       <p>
                         <span>{icons.selectedurl}</span> <span>Linkedin</span>
@@ -599,7 +599,6 @@ export default function HomePage() {
                         </button>
                       </p>
                     </div>
-                    {/* new url  */}
                     <div className="  overlay-form3 ">
                       <label htmlFor="url" className=" overlay-link-label">
                         URL
@@ -614,7 +613,6 @@ export default function HomePage() {
                         />
                       </div>
                     </div>
-                    {/*add new url  */}
                     <div className="  overlay-form3 ">
                       <label htmlFor="urlname" className=" overlay-link-label">
                         URL name
@@ -648,10 +646,10 @@ export default function HomePage() {
                 </form>
               </div>
             </section>
-          )}
+          )} */}
 
           {/* profile img  */}
-          {profile && (
+          {/* {profile && (
             <section className="addLink-overlay">
               <div
                 className="overlay-container"
@@ -671,7 +669,6 @@ export default function HomePage() {
                   <div
                     className="profile-container
               ">
-                    {/* Dummy would be replaced by an img tag later  */}
                     <span>{icons.avatardummy}</span>
                     <button className="overlay-profile-button ">
                       Upload profile photo
@@ -695,10 +692,10 @@ export default function HomePage() {
                 </div>
               </div>
             </section>
-          )}
+          )} */}
 
           {/* delete link  */}
-          {deleteLink && (
+          {/* {deleteLink && (
             <section className="addLink-overlay">
               <div
                 className="overlay-container"
@@ -738,7 +735,7 @@ export default function HomePage() {
                 </div>
               </div>
             </section>
-          )}
+          )} */}
         </div>
       ) : (
         <div className="page-container">
@@ -1126,12 +1123,12 @@ export default function HomePage() {
                     onClick={() => setSelectImg(false)}>
                     Cancel
                   </button>{" "}
-                  <button
+                  {/* <button
                     className=" overlay-link-button "
                     id="save-link"
                     onClick={() => setSelectImg(false)}>
                     Upload
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </section>

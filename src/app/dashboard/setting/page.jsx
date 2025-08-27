@@ -190,6 +190,7 @@ export default function SettingsPage() {
                 placeholder={
                   user?.firstName + " " + user?.lastName || "John Doe"
                 }
+                readOnly
               />
               <div className=" subform">
                 <label htmlFor="email" className="label">
@@ -206,19 +207,19 @@ export default function SettingsPage() {
                 account.
               </p>
             </section>
-            <button
+            {/* <button
               className={state ? " button-active" : " button-inactive"}
               onClick={handleNameUpdate}
             >
               {firstNameLoading ? "Saving..." : "Save Changes"}
-            </button>
+            </button> */}
           </form>
         </section>
 
         {/* security  */}
         <section className=" my-information">
           <h4 className=" information-header  ">Security</h4>
-          <form className="settings-form">
+          <form className="settings-form-security">
             <section className=" settings-subform">
               <div className=" subform">
                 <label htmlFor="password" className="label">
@@ -235,14 +236,13 @@ export default function SettingsPage() {
                   <button
                     type="button"
                     className=" change-button"
-                    onClick={() => setChangePassoword(true)}
-                  >
+                    onClick={() => setChangePassoword(true)}>
                     Change
                   </button>
                 </article>
               </div>
 
-              <div className=" security-detail">
+              {/* <div className=" security-detail">
                 <p className=" security-textc">
                   Multi-factor Authentication{" "}
                   <span>
@@ -253,11 +253,11 @@ export default function SettingsPage() {
                 <span onClick={() => setMultiF(!multiF)}>
                   {!multiF ? icons.click : icons.clickactive}
                 </span>
-              </div>
+              </div> */}
             </section>
-            <button className={multiF ? " button-active" : " button-inactive"}>
+            {/* <button className={multiF ? " button-active" : " button-inactive"}>
               Save Changes
-            </button>
+            </button> */}
           </form>
         </section>
 
@@ -276,8 +276,7 @@ export default function SettingsPage() {
               </p>
               <button
                 className="button-blue"
-                onClick={() => router.push("/Pricing")}
-              >
+                onClick={() => router.push("/Pricing")}>
                 Upgrade to Pro
               </button>
             </div>
@@ -295,8 +294,7 @@ export default function SettingsPage() {
             <button
               type="button"
               onClick={() => setDeleteAccount(true)}
-              className="delete-accountB"
-            >
+              className="delete-accountB">
               Delete my account
             </button>
           </div>
@@ -311,8 +309,7 @@ export default function SettingsPage() {
               <button
                 type="button"
                 className=" cursor-pointer "
-                onClick={() => setChangePassoword(false)}
-              >
+                onClick={() => setChangePassoword(false)}>
                 {icons.exit}
               </button>
             </h4>
@@ -335,8 +332,7 @@ export default function SettingsPage() {
               <button
                 className="button-blue overlay-button "
                 id="savePasswordChange"
-                onClick={handleForgotPassword}
-              >
+                onClick={handleForgotPassword}>
                 {/* Save Change */}
                 {emailLoading ? "Sending..." : "Send Reset Password Email"}
               </button>
@@ -359,8 +355,7 @@ export default function SettingsPage() {
               <button
                 type="button"
                 className=" cursor-pointer "
-                onClick={() => setSecureAccount(false)}
-              >
+                onClick={() => setSecureAccount(false)}>
                 {icons.exit}
               </button>
             </h4>
@@ -383,8 +378,7 @@ export default function SettingsPage() {
                 className="button-blue overlay-button"
                 type="button"
                 id="secure"
-                onClick={() => setSecureAccount(false)}
-              >
+                onClick={() => setSecureAccount(false)}>
                 Close
               </button>
             </form>
@@ -399,8 +393,7 @@ export default function SettingsPage() {
             className="overlay-delete-container mild-zoom"
             data-aos="zoom-in"
             data-aos-delay="100"
-            data-aos-duration="500"
-          >
+            data-aos-duration="500">
             <section className=" current-delete-container">
               <div className="current-delete-info">
                 <span>{icons.deletefill}</span>
@@ -418,15 +411,13 @@ export default function SettingsPage() {
               <div className="current-delete-btns">
                 <button
                   className="current-cancel-btn"
-                  onClick={() => setDeleteAccount(false)}
-                >
+                  onClick={() => setDeleteAccount(false)}>
                   Cancel
                 </button>
                 <button
                   className="current-delete-btn"
                   type="button"
-                  onClick={handleDeleteAccount}
-                >
+                  onClick={handleDeleteAccount}>
                   Delete my account
                 </button>
               </div>

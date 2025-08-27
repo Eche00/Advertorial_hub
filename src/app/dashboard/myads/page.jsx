@@ -254,7 +254,7 @@ function page() {
                           View Ads Insight
                         </li>
 
-                        <li onClick={() => setEditAds(!editAds)}>Edit Ads</li>
+                        {/* <li onClick={() => setEditAds(!editAds)}>Edit Ads</li> */}
                         <li
                           className="d"
                           onClick={() => {

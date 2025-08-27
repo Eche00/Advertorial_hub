@@ -363,12 +363,12 @@ function page() {
                 onClick={() => setSelectImg(false)}>
                 Cancel
               </button>{" "}
-              <button
+              {/* <button
                 className=" overlay-link-button "
                 id="save-link"
                 onClick={() => setSelectImg(false)}>
                 Upload
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
