@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  padding-bottom: 50px;
 }
 
 .my-information {
@@ -55,6 +56,22 @@
   gap: 20px;
   border-radius: 12px;
 }
+.settings-form-security {
+  width: 100%;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 12px;
+  padding: 20px 0%;
+
+  article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}
 
 .input-setting-name {
   outline: none;
@@ -73,7 +90,7 @@
 
 .input-setting-email {
   background: none;
-  margin: 0px 20px;
+  margin: 0px 17px;
   border: none;
   font-size: 16px;
   font-weight: 400;
@@ -145,6 +162,7 @@
   font-weight: 600;
   line-height: 20px;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 
@@ -154,6 +172,7 @@
 .input-security-password {
   outline: none;
   border: none;
+  margin: 0% 17px;
 }
 
 .input-password::placeholder {

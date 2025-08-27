@@ -391,7 +391,115 @@
     max-width: 85%;
   }
 }
+/* * Section wrapper */ 
+.features-section{
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.02) 100%);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+  overflow: hidden;
+}
 
+/* Inner card */
+.features-inner{
+  width: 100%;
+  max-width: 980px;
+  background: linear-gradient(180deg, var(--card), rgba(15,23,32,0.95));
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  color: var(--text);
+  animation: slideUpFade .45s ease both;
+  border-radius: 20px;
+
+}
+
+/* Heading */
+.features-title{
+  margin: 0 0 0.75rem 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+/* List reset */
+.features-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+/* Each feature row */
+.feature-item{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.75rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  transition: background .18s ease, transform .18s ease;
+  text-wrap: wrap;
+}
+
+/* Hover/focus effect */
+.feature-item:hover,
+.feature-item:focus-within{
+  background: rgba(255,255,255,0.015);
+  transform: translateY(-2px);
+}
+
+/* Icon */
+.feature-icon{
+  display: inline-grid;
+  place-items: center;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  color: var(--accent);
+  font-size: 18px;
+  margin-top: 2px;
+  background: linear-gradient(180deg, rgba(30,144,255,0.08), rgba(30,144,255,0.02));
+  box-shadow: 0 4px 12px rgba(30,144,255,0.06);
+}
+
+/* Text */
+.feature-text{
+  color: var(--text);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+/* Muted description (if you want to use) */
+.feature-text small{
+  color: var(--muted);
+  display: block;
+  margin-top: .25rem;
+  font-weight: 500;
+}
+
+/* Responsive: make title and spacing smaller on narrow screens */
+@media (max-width: 1200px){
+  .features-section{
+    width: 80%;
+    margin: auto;
+  }
+  .features-inner{ padding: 1rem; width: 90%;}
+  .features-title{ font-size: 1rem; }
+  .feature-icon{ min-width: 32px; height: 32px; font-size: 16px; }
+  .feature-text{ font-size: 0.95rem; }
+}
+
+/* Simple entrance animation */
+@keyframes slideUpFade{
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 /* Small Phones */
 @media (max-width: 414px) {
   .Pricemain-heading {
