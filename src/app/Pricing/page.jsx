@@ -17,15 +17,10 @@ const Pricing = () => {
   const [token, setToken] = useState(null);
   const router = useRouter();
 
-  // 🚀 Check login before fetching anything
+  //  Check login before fetching anything
   useEffect(() => {
     const userIdOrEmail = localStorage.getItem("userId");
     const storedToken = localStorage.getItem("token");
-
-    if (!userIdOrEmail) {
-      router.replace("/authentication/Login");
-      return;
-    }
 
     setToken(storedToken);
 
@@ -47,12 +42,6 @@ const Pricing = () => {
 
     getUser();
   }, [router]);
-
-  if (!user) {
-    // Optional loading state
-    return <div className="loading">Loading...</div>;
-  }
-
   const prices = {
     personal: "Free",
     business: billing === "monthly" ? "$400" : "$4,000",
@@ -95,6 +84,7 @@ const Pricing = () => {
 
   const getPaystackButton = (planName) => {
     if (!user?.email) return null;
+    const userIdOrEmail = localStorage.getItem("userId");
 
     if (user.plan === "PERSONAL" && planName === "TEAM") {
       return (
@@ -103,7 +93,10 @@ const Pricing = () => {
         </button>
       );
     }
-
+    if (!userIdOrEmail) {
+      router.replace("/authentication/Login");
+      return;
+    }
     const amount = amountsInKobo[planName.toLowerCase()];
     const componentProps = {
       email: user.email,
@@ -119,6 +112,39 @@ const Pricing = () => {
     return <PaystackButton {...componentProps} />;
   };
 
+  const navigateTo = (path) => {
+    router.push(path);
+  };
+  const freePlan = [
+    "10 posts per month",
+    "Only 1 image per post",
+    " No ads",
+    " No social media support",
+    "Ideal for personal projects, testing, and casual use.",
+  ];
+
+  const businessPlan = [
+    "Post Limit: 100 per month",
+    "Media: Unlimited images",
+    "Ads: 3 ads per month",
+    "Social Sharing: Instagram, Facebook",
+    "Ideal For: Growing businesses and entrepreneurs",
+  ];
+  const teamPlan = [
+    "Post Limit: Unlimited",
+    "Media: Unlimited images + videos",
+    "Ads: 5 ads per month",
+    "Social Sharing: Instagram, Facebook, TikTok, Twitter",
+    "Ideal For: Brands, agencies, and teams managing content at scale",
+  ];
+  const features = [
+    { title: "All plans include 24/7 email support!", desc: "" },
+    {
+      title: "Analytics Dashboard",
+      desc: "helps track post performance over time.",
+    },
+    { title: "Upgrade anytime", desc: "as your needs grow!" },
+  ];
   return (
     <div className="Pricepage-container">
       <main className="PriceMainContent">
@@ -132,16 +158,14 @@ const Pricing = () => {
               className={`monthly-billing ${
                 billing === "monthly" ? "active" : ""
               }`}
-              onClick={() => setBilling("monthly")}
-            >
+              onClick={() => setBilling("monthly")}>
               Monthly Billing
             </button>
             <button
               className={`annual-billing ${
                 billing === "annual" ? "active" : ""
               }`}
-              onClick={() => setBilling("annual")}
-            >
+              onClick={() => setBilling("annual")}>
               Annual Billing
             </button>
           </div>
@@ -163,7 +187,7 @@ const Pricing = () => {
                   <span className="Priceplan-subtitle">For a Lifetime</span>
                 </h1>
               </div>
-              {user.plan === "PERSONAL" ? (
+              {user?.plan === "PERSONAL" ? (
                 <button className="current-plan-btn">Current Plan</button>
               ) : (
                 <button className="get-started-btn" disabled>
@@ -172,9 +196,9 @@ const Pricing = () => {
               )}
             </section>
             <section className="Priceplan-features">
-              {[...Array(5)].map((_, i) => (
+              {freePlan.map((feature, i) => (
                 <p className="Pricefeature" key={i}>
-                  <span>{icons.greencheck}</span> Unlimited Post
+                  <span>{icons.greencheck}</span> {feature}
                 </p>
               ))}
             </section>
@@ -198,16 +222,23 @@ const Pricing = () => {
                   </span>
                 </h1>
               </div>
-              {user.plan === "BUSINESS" ? (
+              {!user || !user.plan ? (
+                <button
+                  className="get-started-btn"
+                  onClick={() => navigateTo("/authentication/Login")}>
+                  Business Plan
+                </button>
+              ) : user.plan === "BUSINESS" ? (
                 <button className="get-started-btn">Current Plan</button>
               ) : (
-                getPaystackButton("BUSINESS")
+                // getPaystackButton("BUSINESS")
+                <button className="get-started-btn">Business Plan</button>
               )}
             </section>
             <section className="Priceplan-features">
-              {[...Array(5)].map((_, i) => (
-                <p className="Pricefeaturelight" key={i}>
-                  <span>{icons.whitecheck}</span> Unlimited Post
+              {businessPlan.map((feature, i) => (
+                <p className="Pricefeature" key={i}>
+                  <span>{icons.greencheck}</span> {feature}
                 </p>
               ))}
             </section>
@@ -230,19 +261,61 @@ const Pricing = () => {
                   </span>
                 </h1>
               </div>
-              {user.plan === "TEAM" ? (
+              {!user || !user.plan ? (
+                <button
+                  className="get-started-btn"
+                  onClick={() => navigateTo("/authentication/Login")}>
+                  Team Plan
+                </button>
+              ) : user.plan === "TEAM" ? (
                 <button className="current-plan-btn">Current Plan</button>
               ) : (
-                getPaystackButton("TEAM")
+                // getPaystackButton("TEAM")
+                <button className="current-plan-btn">Team Plan</button>
               )}
             </section>
             <section className="Priceplan-features">
-              {[...Array(5)].map((_, i) => (
+              {teamPlan.map((feature, i) => (
                 <p className="Pricefeature" key={i}>
-                  <span>{icons.greencheck}</span> Unlimited Post
+                  <span>{icons.greencheck}</span> {feature}
                 </p>
               ))}
             </section>
+          </div>
+        </section>
+        {/* <!-- Pricing-features-section.html --> */}
+        <section
+          className="features-section"
+          aria-labelledby="features-heading"
+          data-aos="fade-up"
+          data-aos-duration="800">
+          <div className="features-inner">
+            <h3
+              id="features-heading"
+              className="features-title"
+              data-aos="fade-right"
+              data-aos-delay="100">
+              What’s included
+            </h3>
+
+            <ul className="features-list">
+              {features.map((f, i) => (
+                <li
+                  className="feature-item"
+                  key={i}
+                  data-aos="fade-up"
+                  data-aos-delay={i * 150} // stagger effect
+                  data-aos-duration="700">
+                  <span className="feature-icon" aria-hidden="true">
+                    🔹
+                  </span>
+                  <span className="feature-text">
+                    <strong>{f.title}</strong>
+                    {f.desc ? ` ${f.desc}` : ""}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
       </main>

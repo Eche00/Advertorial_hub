@@ -119,13 +119,43 @@ export default function Pricing() {
     return <PaystackButton {...componentProps} />;
   };
 
+  const freePlan = [
+    "10 posts per month",
+    "Only 1 image per post",
+    " No ads",
+    " No social media support",
+    "Ideal for personal projects, testing, and casual use.",
+  ];
+
+  const businessPlan = [
+    "Post Limit: 100 per month",
+    "Media: Unlimited images",
+    "Ads: 3 ads per month",
+    "Social Sharing: Instagram, Facebook",
+    "Ideal For: Growing businesses and entrepreneurs",
+  ];
+  const teamPlan = [
+    "Post Limit: Unlimited",
+    "Media: Unlimited images + videos",
+    "Ads: 5 ads per month",
+    "Social Sharing: Instagram, Facebook, TikTok, Twitter",
+    "Ideal For: Brands, agencies, and teams managing content at scale",
+  ];
+  const features = [
+    { title: "All plans include 24/7 email support!", desc: "" },
+    {
+      title: "Analytics Dashboard",
+      desc: "helps track post performance over time.",
+    },
+    { title: "Upgrade anytime", desc: "as your needs grow!" },
+  ];
   return (
     <div>
       <div className="Pricepage-container ">
         <main className="PriceMainContent">
           <section className="PriceHeadSection" data-aos="fade-down">
             <h1 className="Pricemain-heading">
-              We’ve got a plan that’s perfect  <br/> for you
+              We’ve got a plan that’s perfect <br /> for you
             </h1>
 
             <div className="billing-buttons">
@@ -133,16 +163,14 @@ export default function Pricing() {
                 className={`monthly-billing ${
                   billing === "monthly" ? "active" : ""
                 }`}
-                onClick={() => setBilling("monthly")}
-              >
+                onClick={() => setBilling("monthly")}>
                 Monthly Billing
               </button>
               <button
                 className={`annual-billing ${
                   billing === "annual" ? "active" : ""
                 }`}
-                onClick={() => setBilling("annual")}
-              >
+                onClick={() => setBilling("annual")}>
                 Annual Billing
               </button>
             </div>
@@ -152,8 +180,7 @@ export default function Pricing() {
             className="pricing-section mild-zoom"
             data-aos="zoom-in"
             data-aos-delay="400"
-            data-aos-duration="2000"
-          >
+            data-aos-duration="2000">
             {/* Personal Plan */}
             <div className="pricing-card">
               <section className="Priceplan-details">
@@ -178,9 +205,9 @@ export default function Pricing() {
                 )}
               </section>
               <section className="Priceplan-features">
-                {[...Array(5)].map((_, i) => (
+                {freePlan.map((feature, i) => (
                   <p className="Pricefeature" key={i}>
-                    <span>{icons.greencheck}</span> Unlimited Post
+                    <span>{icons.greencheck}</span> {feature}
                   </p>
                 ))}
               </section>
@@ -207,13 +234,16 @@ export default function Pricing() {
                 {user.plan === "BUSINESS" ? (
                   <button className="get-started-btn">Current Plan</button>
                 ) : (
-                  getPaystackButton("BUSINESS")
+                  // getPaystackButton("BUSINESS")
+                  <button className="current-plan-btn" disabled>
+                    Coming soon
+                  </button>
                 )}
               </section>
               <section className="Priceplan-features">
-                {[...Array(5)].map((_, i) => (
-                  <p className="Pricefeaturelight" key={i}>
-                    <span>{icons.whitecheck}</span> Unlimited Post
+                {businessPlan.map((feature, i) => (
+                  <p className="Pricefeature" key={i}>
+                    <span>{icons.greencheck}</span> {feature}
                   </p>
                 ))}
               </section>
@@ -239,16 +269,54 @@ export default function Pricing() {
                 {user.plan === "TEAM" ? (
                   <button className="current-plan-btn">Current Plan</button>
                 ) : (
-                  getPaystackButton("TEAM")
+                  // getPaystackButton("TEAM")
+                  <button className="current-plan-btn" disabled>
+                    Coming soon
+                  </button>
                 )}
               </section>
               <section className="Priceplan-features">
-                {[...Array(5)].map((_, i) => (
+                {teamPlan.map((feature, i) => (
                   <p className="Pricefeature" key={i}>
-                    <span>{icons.greencheck}</span> Unlimited Post
+                    <span>{icons.greencheck}</span> {feature}
                   </p>
                 ))}
               </section>
+            </div>
+          </section>
+          {/* <!-- Pricing-features-section.html --> */}
+          <section
+            className="features-section"
+            aria-labelledby="features-heading"
+            data-aos="fade-up"
+            data-aos-duration="800">
+            <div className="features-inner">
+              <h3
+                id="features-heading"
+                className="features-title"
+                data-aos="fade-right"
+                data-aos-delay="100">
+                What’s included
+              </h3>
+
+              <ul className="features-list">
+                {features.map((f, i) => (
+                  <li
+                    className="feature-item"
+                    key={i}
+                    data-aos="fade-up"
+                    data-aos-delay={i * 150} // stagger effect
+                    data-aos-duration="700">
+                    <span className="feature-icon" aria-hidden="true">
+                      🔹
+                    </span>
+                    <span className="feature-text">
+                      <strong>{f.title}</strong>
+                      {f.desc ? ` ${f.desc}` : ""}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
         </main>
