@@ -2,20 +2,17 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-// import { icons } from "@/lib/Icons";
 import "@/styles/Login.css";
-// import { signIn } from "next-auth/react";
 import Link from "next/link";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // ✅ New State
   const [loading, setLoading] = useState(false);
   const [socialLoading, setSocialLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
-
-  // ✅ Backend email/password login
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,21 +20,23 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await fetch("https://advertorial-backend.onrender.com/api/auth/login", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-    "Origin": "http://localhost:3000"
-  },
-  body: JSON.stringify({ email, password })
-});
+      const response = await fetch(
+        "https://advertorial-backend.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Origin: "http://localhost:3000",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
       const data = await response.json();
       if (!response.ok) {
         throw new Error(data?.message || "Login failed!");
       }
-// 
-      // Save token and user ID in localStorage
+
       localStorage.setItem("userId", data.user.id);
       localStorage.setItem("token", data.token);
 
@@ -49,7 +48,6 @@ const Login = () => {
     }
   };
 
-  // ✅ Social login (Google/Facebook)
   const handleSocialLogin = async (provider) => {
     try {
       setSocialLoading(true);
@@ -94,21 +92,65 @@ const Login = () => {
               />
             </div>
 
-            <div className="input-group">
+            <div className="input-group password-group">
               <label htmlFor="password" className="label">
                 Password
               </label>
-              <input
-                type="password"
-                id="password"
-                className="input-field"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+              <div className="password-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  id="password"
+                  className="input-field password-input"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <button
+                  type="button"
+                  className="toggle-password"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? (
+                    // 👁️ Eye with slash (hide)
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13.875 18.825A10.05 10.05 0 0112 19c-7 0-10-7-10-7a19.48 19.48 0 014.133-5.111m3.746-2.431A9.953 9.953 0 0112 5c7 0 10 7 10 7a19.476 19.476 0 01-4.134 5.111M15 12a3 3 0 11-6 0 3 3 0 016 0zM3 3l18 18"
+                      />
+                    </svg>
+                  ) : (
+                    // 👁️ Normal eye (show)
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 4.5c-7 0-10 7-10 7s3 7 10 7 10-7 10-7-3-7-10-7zm0 11a4 4 0 100-8 4 4 0 000 8z"
+                      />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
           </section>
-          {/* Forgot Password link */}
+
           <div className="forgot-password">
             <a href="/authentication/ForgotPassword">Forgot Password?</a>
           </div>
@@ -125,12 +167,7 @@ const Login = () => {
               {loading ? "Logging in..." : "Log In"}
             </button>
 
-            {/* <div className="or-divider">
-              <span className="divider-line"></span>
-              <span className="or-text">OR</span>
-              <span className="divider-line"></span>
-            </div> */}
-
+            {/* Social buttons (commented out) */}
             <div className="auth-buttons">
               {/* <button
                 type="button"
@@ -141,7 +178,6 @@ const Login = () => {
                 <span>{icons?.google || "🔵"}</span>{" "}
                 {socialLoading ? "Connecting..." : "Sign in with Google"}
               </button> */}
-
               {/* <button
                 type="button"
                 className="auth-button"

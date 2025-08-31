@@ -7,9 +7,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@fortawesome/react-fontawesome": "^3.0.1",
     "@tailwindcss/postcss": "^4.0.16",
     "aos": "^2.3.4",
     "eslint-plugin-react-hooks": "^5.2.0",

@@ -1,59 +1,59 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ImageSkeleton from "../../ImageSkeleton";
 import { icons } from "@/lib/Icons";
 
 export default function Post() {
-  const { id } = useParams();
+  const router = useRouter();
+
   const [post, setPost] = useState(null);
   const [analytics, setAnalytics] = useState(null);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
   const [menu, setMenu] = useState(false);
 
   useEffect(() => {
-    if (id) {
-      fetch(`https://advertorial-backend.onrender.com/api/posts/${id}`)
-        .then((res) => res.json())
-        .then((data) => setPost(data))
-        .catch((err) => console.error("Error fetching post:", err));
-      // Fetch analytics
-      fetch(
-        `https://advertorial-backend.onrender.com/api/posts/analytics/${id}`
-      )
-        .then((res) => res.json())
-        .then((data) => setAnalytics(data))
-        .catch((err) => console.error("Error fetching analytics:", err));
-    }
+    // ✅ Get postId directly from the URL pathname
+    const pathParts = window.location.pathname.split("/");
+    const postId = pathParts[pathParts.length - 1];
+    if (!postId) return;
+
+    // fetch post
+    fetch(`https://advertorial-backend.onrender.com/api/posts/${postId}`)
+      .then((res) => res.json())
+      .then((data) => setPost(data))
+      .catch((err) => console.error("Error fetching post:", err));
+
+    // fetch analytics
+    fetch(
+      `https://advertorial-backend.onrender.com/api/posts/analytics/${postId}`
+    )
+      .then((res) => res.json())
+      .then((data) => setAnalytics(data))
+      .catch((err) => console.error("Error fetching analytics:", err));
+
+    // fetch user
     const getUser = async () => {
       const userIdOrEmail = localStorage.getItem("userId");
-
       if (!userIdOrEmail) return router.push("/authentication/Login");
 
       try {
         const res = await fetch(
-          `https://advertorial-backend.onrender.com/api/auth/user/${userIdOrEmail}`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
+          `https://advertorial-backend.onrender.com/api/auth/user/${userIdOrEmail}`
         );
         const userData = await res.json();
-
         setUser(userData);
       } catch (error) {
-        console.error("Error fetching user or posts:", error);
+        console.error("Error fetching user:", error);
       }
     };
     getUser();
-  }, [id]);
+  }, [router]);
 
   if (!post) return <p>Loading...</p>;
 
-  // handling delete post
+  // handle delete post
   const handleDeletePost = async (postId) => {
     const userToken = localStorage.getItem("token");
 
@@ -68,12 +68,10 @@ export default function Post() {
         }
       );
 
-      if (!response.ok) {
-        throw new Error(`Failed to delete post: ${response.statusText}`);
-      }
+      if (!response.ok) throw new Error("Failed to delete post");
 
       console.log(`Post ${postId} deleted successfully.`);
-      setUserPosts((prev) => prev.filter((post) => post._id !== postId));
+      router.push("/dashboard/posts"); // ✅ redirect after delete
     } catch (error) {
       console.error("Error deleting post:", error);
     }
@@ -84,34 +82,35 @@ export default function Post() {
     if (navigator.share) {
       navigator
         .share({
-          title: "Check out this post",
-          text: "I found this post interesting, thought you might like it too!",
-          url: `https://advertorial-backend.onrender.com/api/posts/${postId}`,
+          title: post.title,
+          text: "Check out this post!",
+          url: `${window.location.origin}/dashboard/posts/${postId}`,
         })
-        .then(() => console.log("Post shared successfully!"))
         .catch((error) => console.error("Error sharing post:", error));
+    } else {
+      navigator.clipboard.writeText(
+        `${window.location.origin}/dashboard/posts/${postId}`
+      );
+      alert("Post link copied to clipboard!");
     }
   };
 
-  // handling closing the menu
-  const handleCancel = () => {
-    setMenu(false);
-  };
   return (
     <div
       style={{ padding: "40px 0px" }}
       className="createpost-container"
-      onClick={handleCancel}
+      onClick={() => setMenu(false)}
     >
-      <section className=" recetpost-card" key={post.id}>
-        {/* post information  */}
-        <div className=" recentpost-info">
+      <section className="recetpost-card" key={post._id}>
+        {/* Post header */}
+        <div className="recentpost-info">
           <article>
             <p className="avatar-dummy">
-              {user?.firstName.slice(0, 1) + user?.lastName.slice(0, 1)}
+              {user?.firstName?.[0]}
+              {user?.lastName?.[0]}
             </p>
             <p>
-              {user?.firstName + " " + user?.lastName}{" "}
+              {user?.firstName} {user?.lastName}{" "}
               <span>
                 {new Date() - new Date(post.createdAt) < 60000
                   ? "Just now"
@@ -127,15 +126,15 @@ export default function Post() {
               </span>
             </p>
           </article>
+
+          {/* Menu */}
           <div className="recentpost-menu">
             <span
-              //  onClick={() => (!menu)}
               onClick={(e) => {
-                e.stopPropagation(),
-                  setMenu(menu === post._id ? null : post._id);
+                e.stopPropagation();
+                setMenu(menu === post._id ? null : post._id);
               }}
             >
-              {" "}
               {icons.menu}
             </span>
             {menu === post._id && (
@@ -149,60 +148,49 @@ export default function Post() {
             )}
           </div>
         </div>
-        <p
-          style={{
-            margin: "0",
-            fontSize: "16px",
-            fontWeight: "bolder",
-          }}
-        >
+
+        {/* Post body */}
+        <p style={{ margin: "0", fontSize: "16px", fontWeight: "bolder" }}>
           {post.title}
         </p>
-        {/* post write up  */}
-        <p
-          style={{
-            margin: "0",
-          }}
-        >
-          {post.content}
-        </p>
+        <p style={{ margin: "0" }}>{post.content}</p>
 
-        {/* post images  */}
+        {/* Images */}
         <ImageSkeleton images={post.images} />
-        <span> Post Insights</span>
-        <section>
-          {analytics && (
-            <div className="post-analytics" style={{ marginTop: "1rem" }}>
-              <p>Total Views: {analytics?.totalViews}</p>
 
-              <div>
-                <strong>Devices:</strong>
-                <ul>
-                  {Object.entries(analytics?.deviceStats).map(
-                    ([device, count]) => (
-                      <li key={device}>
-                        {device}: {count}
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
+        {/* Analytics */}
+        <span>Post Insights</span>
+        {analytics && (
+          <div className="post-analytics" style={{ marginTop: "1rem" }}>
+            <p>Total Views: {analytics?.totalViews}</p>
 
-              <div>
-                <strong>Locations:</strong>
-                <ul>
-                  {Object.entries(analytics?.locationStats).map(
-                    ([location, count]) => (
-                      <li key={location}>
-                        {location}: {count}
-                      </li>
-                    )
-                  )}
-                </ul>
-              </div>
+            <div>
+              <strong>Devices:</strong>
+              <ul>
+                {Object.entries(analytics?.deviceStats || {}).map(
+                  ([device, count]) => (
+                    <li key={device}>
+                      {device}: {count}
+                    </li>
+                  )
+                )}
+              </ul>
             </div>
-          )}
-        </section>
+
+            <div>
+              <strong>Locations:</strong>
+              <ul>
+                {Object.entries(analytics?.locationStats || {}).map(
+                  ([location, count]) => (
+                    <li key={location}>
+                      {location}: {count}
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          </div>
+        )}
       </section>
     </div>
   );

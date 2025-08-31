@@ -11,9 +11,6 @@
   overflow: visible !important;
 }
 
-/*  */
-
-/*  */
 
 .ExploreIcons img {
   width: 50px;
@@ -309,4 +306,33 @@
     overflow: hidden;
     /* width: 100%; */
   }
+  /* @keyframes moveIcon {
+  0% {
+    transform: translateX(100vw) scale(0.8);
+    opacity: 0.8;
+  }
+  30% {
+    transform: translateX(50vw) scale(1.2);
+    opacity: 1;
+  }
+   40% {
+    transform: translateX(50vw) scale(1.5);
+    opacity: 1;
+  }
+   60% {
+    transform: translateX(50vw) scale(2);
+    opacity: 1;
+  }
+   80% {
+    transform: translateX(50vw) scale(1.);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-10vw) scale(0.8);
+    opacity: 0.8;
+  } */
+.ExbtnStart {
+    padding: .6rem 1.5rem;
+    font-size: .8rem;
+}
 }

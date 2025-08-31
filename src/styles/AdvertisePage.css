@@ -133,7 +133,7 @@
 
   .advertHead h2 {
     font-size: 2.5rem;
-    padding:0 2rem;
+    padding: 0 2rem;
   }
 
   .advertHead p {
@@ -162,14 +162,13 @@
 }
 @media (max-width: 414px) {
   .advertHead h2 {
-    font-size: 1.8rem;
-    width: 90%;
+    font-size: 1.3rem;
     margin: 0 auto;
     padding-bottom: 1rem;
   }
 
   .advertHead p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #525866;
     width: 80%;
     margin: 0 auto;
@@ -180,4 +179,25 @@
     margin: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+  /* /* .scalability, .dataDriven, .targetAud, .costEffect, .enhanceCust, .visibilty{
+    
+  } */
+  .scaleImg img,
+  .dataImg img,
+  .targetImg img,
+  .costImg img,
+  .enhanceImg img,
+  .brandImg img {
+    width: 3.8rem;
+  }
+  .advertGoals > div > div {
+    width: 60px;
+    height: 60px;
+  }
+    .advertGoals h3 {
+      font-size: 1.1rem;
+    }
+     .advertGoals p {
+      font-size: 0.8rem;
+     }
 }

@@ -153,9 +153,9 @@
     padding: 1rem;
     gap: 0;
   }
-.hr {
-  display: block;
-}
+  .hr {
+    display: block;
+  }
   .footerLogo,
   .footerResource,
   .footerAbout,
@@ -196,6 +196,29 @@
 
   .footerImg img {
     margin: 0 auto;
-    width: 90px;
+    width: 40px;
+  }
+  .footerLogo p {
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+
+  .footerLogo h5 {
+    font-size: 0.7rem;
+  }
+
+  /* Footer Headings */
+  .footerResource h2,
+  .footerAbout h2,
+  .footerContact h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  .footerResource li,
+  .footerAbout li,
+  .footerContact li {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
   }
 }

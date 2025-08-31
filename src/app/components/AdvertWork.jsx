@@ -39,7 +39,7 @@ const AdvertWork = () => {
       const authToken = localStorage.getItem("token");
       setToken(authToken);
 
-      if (!userIdOrEmail) return
+      if (!userIdOrEmail) return;
 
       try {
         const res = await fetch(
@@ -236,9 +236,10 @@ const AdvertWork = () => {
               We’ve got a plan that’s perfect <br /> for you
             </h1>
 
-            <div className="billing-buttons">
+            <div className="adbilling-toggle">
+              <div className="toggle-background" data-active={billing}></div>
               <button
-                className={`monthly-billing ${
+                className={`toggle-option ${
                   billing === "monthly" ? "active" : ""
                 }`}
                 onClick={() => setBilling("monthly")}
@@ -246,7 +247,7 @@ const AdvertWork = () => {
                 Monthly Billing
               </button>
               <button
-                className={`annual-billing ${
+                className={`toggle-option ${
                   billing === "annual" ? "active" : ""
                 }`}
                 onClick={() => setBilling("annual")}
@@ -367,7 +368,7 @@ const AdvertWork = () => {
             aria-labelledby="features-heading"
             data-aos="fade-up"
           >
-            <div className="features-inner">
+            {/* <div className="features-inner">
               <h3
                 id="features-heading"
                 className="features-title"
@@ -393,7 +394,7 @@ const AdvertWork = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </section>
         </main>
       </div>

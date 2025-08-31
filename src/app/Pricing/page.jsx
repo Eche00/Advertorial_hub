@@ -166,7 +166,7 @@ export default function AdPricing() {
               We’ve got a plan that’s perfect <br /> for you
             </h1>
 
-            <div className="billing-buttons">
+            <div className="adbilling-buttons">
               <button
                 className={`monthly-billing ${
                   billing === "monthly" ? "active" : ""
